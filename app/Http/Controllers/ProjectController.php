@@ -12,7 +12,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $projects = Project::all();
+        return view('projects.index', compact('projects'));
     }
 
     /**
@@ -44,7 +45,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -52,7 +53,18 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'start_date' => 'required',
+            'due_date' => 'required',
+        ]);
+        $project->update([
+            'title'=> $request->title,
+            'description'=> $request->description,
+        ]);
+        return redirect()->route('project.index');
     }
 
     /**

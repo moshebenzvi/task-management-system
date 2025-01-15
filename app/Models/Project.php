@@ -10,8 +10,8 @@ class Project extends Model
     /** @use HasFactory<\Database\Factories\ProjectFactory> */
     use HasFactory;
     protected $fillable = ['title', 'description', 'start_date', 'due_date', 'finish_date'];
-    protected $cast = [
-        'start_date' => 'date',
+    protected $casts = [
+        'start_date' => 'date:d-m-Y',
         'due_date' => 'date',
         'finish_date' => 'date',
     ];

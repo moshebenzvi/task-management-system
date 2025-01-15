@@ -12,6 +12,7 @@
                     {{ __("You're logged in!") }}
 
                     <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+
                     <dialog id="my_modal_1" class="modal">
                         <div class="modal-box">
                             <h3 class="text-lg font-bold">Hello!</h3>

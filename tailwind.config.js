@@ -19,7 +19,7 @@ export default {
     },
 
     plugins: [
-        forms,
         require('daisyui'),
+        forms,
     ],
 };
