@@ -40,7 +40,7 @@
                                 </div>
                             @enderror
 
-                            // TODO: error input
+                            // TODO: error edit
                         </form>
                     </div>
 

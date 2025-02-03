@@ -1,5 +1,18 @@
-<x-app-layout>
+<?php
 
+use App\Models\Project;
+use Livewire\Volt\Component;
+
+new class extends Component {
+    public $projects = '';
+
+    public function mount(): void
+    {
+        $this->projects = Project::with('tasks')->get();
+    }
+}; ?>
+
+<div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -50,5 +63,4 @@
             </div>
         </div>
     </div>
-
-</x-app-layout>
+</div>

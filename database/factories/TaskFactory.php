@@ -18,7 +18,7 @@ class TaskFactory extends Factory
     public function definition(): array
     {
         return [
-            'projects_id' => Project::inRandomOrder('id')->first()->id,
+            'project_id' => Project::inRandomOrder('id')->first()->id,
             'title' => fake()->jobTitle(),
             'description' => fake()->realText(),
             'status' => fake()->randomElement(['To Do', 'Progress', 'Done']),

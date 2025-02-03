@@ -16,4 +16,9 @@ class Project extends Model
         'finish_date' => 'date',
     ];
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }

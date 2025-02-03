@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             // Title,Description,Status (e.g., To Do, In Progress, Done),Priority (e.g., Low, Medium, High),Due Date,Assigned User (Member),Associated Project
-            $table->foreignId('projects_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('project_id')->constrained()->cascadeOnDelete();
             $table->string('title');
             $table->string('description');
             $table->enum('status', ['To Do', 'Progress', 'Done'])->default('To Do');
